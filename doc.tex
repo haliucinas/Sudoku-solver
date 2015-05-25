@@ -1,0 +1,127 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{indentfirst}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hmargin={30mm,15mm},vmargin={20mm,20mm},bindingoffset=0mm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, unicode]{hyperref}
+\usepackage{amsmath}
+\parindent=7mm
+\usepackage{graphicx}
+\renewcommand{\refname}{Literatūros sąrašas} % article
+%\renewcommand{\bibname}{Literatūros sąrašas} % report
+\renewcommand{\contentsname}{Turinys}
+
+\begin{document}
+\thispagestyle{empty} % nerasomas psl. nr
+
+\begin{center}
+ VILNIAUS UNIVERSITETAS 
+ 
+MATEMATIKOS IR INFORMATIKOS FAKULTETAS
+
+MATEMATINĖS INFORMATIKOS KATEDRA
+
+\vspace{4cm}
+
+\textbf{Mantas Jonytis}
+
+Informatikos studijų programa
+
+Matematinės informatikos šaka
+
+
+\vspace{3cm}
+
+\textbf{\huge Kompiuterinė rega ir jos taikymai}
+
+Tiriamojo seminaro ataskaita
+
+\vspace{4cm}
+
+\vfill
+
+Vilnius \ \  2015
+\end{center}
+
+\clearpage
+
+%\maketitle 
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\section*{Įvadas}
+\addcontentsline{toc}{section}{Įvadas} % rasoma turinyje
+Kompiuterinė rega - specifinio pavidalo signalas, kurį gali apdoroti ir analizuoti kompiuterizuotos sistemos. Išgauta aktuali informacija naudojama specifinės būsenoms bei procedūroms aktyvuoti. Pasitelkus dirbtinį intelektą, kompiuterizuotos sistemos gali tyrinėti aplinką, rinkti informaciją ar "mokytis".
+
+OpenCV (Open Source Computer Vision Library) – specializuota C/C++/Python programavimo biblioteka daugumoje skirta vaizdų analizei realiame laike. Kūrėjai ir palaikytojai: Intel, Willow Garage, Itseez ir kt.Biblioteka yra multiplatforminė, t.y. palaikoma visų, šiuo metu, populiarių operacinių sistemų bei yra atviro kodo su BSD licencija.
+
+Galimi bibliotekos taikymo būdai:
+\begin{itemize}
+    \item 2D ir 3D įrankiai
+    \item Kameros judesio nustatymas
+    \item Veido atpažinimo sistemos
+    \item Gestų atpažinimas
+    \item Žmogaus-kompiuterio bendravimas
+    \item Mobilioji robotika
+    \item Judesio suvokimas
+    \item Objektų identifikacija
+    \item Segmentacija ir atpažinimas
+    \item Stereovizija
+    \item Judesio struktūros atkūrimas
+    \item Judesio pagavimas
+    \item Ir kiti \ldots
+\end{itemize}
+
+\newpage
+
+\section{Praktinė seminaro dalis}
+\subsection{Programos aprašas}
+Tiriant kompiuterinės regos biblioteką buvo kurtas projektas. Projekto pagrindinė įdėja - rasti sprendimą sudoku uždaviniui. Pagrindinės problemos šiam uždaviniui išspręsti:
+\begin{itemize}
+    \item Sudoku matricos radimas paveikslėlyje
+    \item Skaitmenų atpažinimas
+\end{itemize}
+
+Matricos radimui naudojama paveikslėlio transformacija, t.y. didesniam naudingos informacijos kiekiui išgauti paveikslėlio spalvos keičiamos į nespalvotas arba juodai baltas. Po transformacijos ieškome didžiausio tamsių pikselių kvadrato kontūro, kuris ir bus mūsų ieškoma matrica.
+
+Radus matricą reikia ištirti jau esamus skaičius matricoje. Skaitmenų analizei naudojamas optinis simbolių atpažinimas (optical character recognition). Pagal parengtus skaitmenų atvaizdus, biblioteka sugeba rasti jų atitikmenis paveikslėlyje.
+
+Atpažinusi skaitmenis programa ieško galimo sprendimo likusiems langeliams bei radusi jį, atvaizduoja ekrane.
+ 
+\subsection{Programos trūkumai}
+\begin{itemize}
+    \item Sudoku matricos radimui reikalingas vartotojo įsikišimas, kadangi radus matricos kontūrą, jis iškerpamas, išsaugomas ir toliau analizuojamas. 
+    \item Skaitmenų atpažinimas gali būti pritaikytas tik įdiegto šrifto skaitmenims. Didelė tikimybė, kad ranka rašyti skaitmenys bus neatpažinti. Kaip problemos sprendimą galima taikyti didesnę skaitmenų duomenų bazę bei mašinų mokymo algoritmus.
+\end{itemize}
+ 
+\newpage
+
+\section*{Išvados}
+\addcontentsline{toc}{section}{Išvados}
+Sudoku sprendimo radimas buvo kuriamas su tikslu įsigilinti į kompiuterinės regos bei OpenCV bibliotekos panaudojimą.
+
+Programa puikiai randa ir apdoroja gautą informaciją realiu laiku.
+
+Ateities planuose visiškas vartotojo įsikišimo panaikinimas bei skaitmenų analizės atnaujinimas naudojantis skaitmenų atpažinimo klasifikatoriais.
+
+\newpage
+ 
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{Literatūra} %% Literatura bus itraukta i turini
+\bibitem {EMAMI}
+Shervin Emami, Khvedchenia Levgen, Naureen Mahmood, Jason Saragih, Roy Shilkrot, David Millan Escriva, Daniel Lelis Baggio, Mastering OpenCV with Practical Computer Vision Projects
+
+\bibitem {SUDOKU}
+Sudoku sprendimo algoritmai, \url{http://en.wikipedia.org/wiki/Sudoku_solving_algorithms} 
+
+\bibitem {Langville}
+ 
+Optinis skaitmenų atpažinimas, \url{http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_ml/py_knn/py_knn_opencv/py_knn_opencv.html}
+
+\end{thebibliography} 
+
+\end{document}
